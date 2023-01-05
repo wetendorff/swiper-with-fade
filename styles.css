@@ -1,0 +1,82 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow-x: visible;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fade-out-container {
+  display: grid;
+  grid-template-columns: auto 400px auto;
+  overflow: hidden;
+}
+
+.fade-out-container .left,
+.fade-out-container .right {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fade-out-container .left {
+  background-image: linear-gradient(
+    -90deg,
+    rgba(238, 238, 238, 0) 0%,
+    rgba(238, 238, 238, 1) 5rem
+  );
+}
+
+.fade-out-container .right {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 5rem
+  );
+}
+
+.fade-out-container .center {
+  z-index: 0;
+}
