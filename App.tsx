@@ -4,11 +4,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-
 import './styles.css';
-
-// import required modules
-import { Navigation } from 'swiper';
 
 export default function App() {
   const [nextDisabled, setNextDisabled] = useState(false);
@@ -64,16 +60,30 @@ export default function App() {
     );
   }
 
+  const breakpoints = {
+    // when window width is >= 480px
+    640: {
+      slidesPerView: 2.25,
+      spaceBetween: 30,
+    },
+    // when window width is >= 640px
+    1000: {
+      slidesPerView: 4.25,
+      spaceBetween: 40,
+    },
+  };
+
   return (
     <div className="fade-out-container">
       <div className="left"></div>
       <div className="center">
         <Swiper
-          slidesPerView={2.25}
+          slidesPerView={1.25}
           spaceBetween={20}
           className="mySwiper"
           onSlideChange={updateButtonsDisable}
           onInit={updateButtonsDisable}
+          breakpoints={breakpoints}
         >
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>

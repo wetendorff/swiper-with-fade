@@ -85,8 +85,20 @@ body {
 
 .fade-out-container {
   display: grid;
-  grid-template-columns: auto 400px auto;
+  grid-template-columns: auto 300px auto;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .fade-out-container {
+    grid-template-columns: auto 600px auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .fade-out-container {
+    grid-template-columns: auto 960px auto;
+  }
 }
 
 .fade-out-container .left,
